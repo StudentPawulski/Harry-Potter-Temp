@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,21 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_923_140_930) do
-  create_table 'houses', force: :cascade do |t|
-    t.string 'name'
-    t.integer 'points'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+ActiveRecord::Schema.define(version: 2019_09_23_140930) do
+
+  create_table "houses", force: :cascade do |t|
+    t.string "name"
+    t.integer "points"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'students', force: :cascade do |t|
-    t.string 'name'
-    t.integer 'house_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['house_id'], name: 'index_students_on_house_id'
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.integer "house_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["house_id"], name: "index_students_on_house_id"
   end
 
-  add_foreign_key 'students', 'houses'
+  add_foreign_key "students", "houses"
 end
