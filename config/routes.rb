@@ -3,7 +3,9 @@
 Rails.application.routes.draw do
   resources :houses, only: %i[index show]
   # GET /houses => houses#index
-  # GET /houses/:id => houses#show
+  # GET /houses/:id => houses#show the :id ends up in the params hash.
+  resources :students, only: :show
+  # GET /students/:id => students#show
   root to: 'houses#index'
 
   # GET /           => houses#index

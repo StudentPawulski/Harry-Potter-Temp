@@ -7,5 +7,7 @@ class HousesController < ApplicationController
   # the associated view is auto-magically loaded with access to the @vars.
   # index action maps to: app/views/houses/index.html.erb
 
-  def show; end
+  def show
+    @house = House.find(params[:id])
+  end
 end

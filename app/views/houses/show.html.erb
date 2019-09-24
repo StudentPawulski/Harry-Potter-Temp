@@ -1,2 +1,17 @@
-<h1>Houses#show</h1>
-<p>Find me in app/views/houses/show.html.erb</p>
+<h1><%= @house.name%></h1>
+
+<p>
+  <strong>Points: </strong>
+  <%= @house.points%>
+</p>
+
+<h2>Students in house <%= @house.name%></h2>
+<ul>
+  <% @house.students.each do |student| %>
+    <% if @house.students.empty? %>
+      <p>there are no students</p>
+    <%else%>
+      <li><%=link_to student.name, student%></li>
+    <%end%>
+  <%end%>
+</ul>
